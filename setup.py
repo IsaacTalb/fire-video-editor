@@ -3,7 +3,7 @@ This is a setup script for py2app.
 """
 from setuptools import setup
 
-APP = ['custom-cut.py']  # Replace with your main script filename
+APP = ['macOS.py']  # Replace with your main script filename
 DATA_FILES = []
 OPTIONS = {
     'argv_emulation': True,  # This makes drag-and-drop work
