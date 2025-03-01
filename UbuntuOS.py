@@ -56,7 +56,13 @@ def split_video():
             output_path = os.path.join(output_dir, f"{base_filename}_{part_label.replace(' ', '_')}.mp4")
 
             title_filter = create_title_filter(title_text, aspect_ratio)
-            crop_filter = "crop=ih*9/16:ih:(iw-ih*9/16)/2:0" if aspect_ratio == "9:16" else ""
+
+            # this is for center
+            # crop_filter = "crop=ih*9/16:ih:(iw-ih*9/16)/2:0" if aspect_ratio == "9:16" else ""
+
+            # this is for towards right
+            crop_filter = "crop=ih*9/16:ih:((iw-ih*9/16)/2 + 200):0" if aspect_ratio == "9:16" else ""
+
             full_filter = f"{crop_filter},{title_filter}" if crop_filter else title_filter
 
             cmd = [
