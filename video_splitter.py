@@ -72,7 +72,8 @@ def split_video():
             output_path = os.path.join(output_dir, f"{base_filename}_{part_label.replace(' ', '_')}.mp4")
 
             # Build filter chain: if 9:16, apply a crop filter and then a title overlay.
-            font_path = "/usr/share/fonts/truetype/noto/NotoSansMyanmar-Regular.ttf"  # adjust as needed
+            # font_path = "/usr/share/fonts/truetype/noto/NotoSansMyanmar-Regular.ttf"  # adjust as needed
+            font_path = "/home/isc-kfc/share/fonts/Sigmar/Sigmar-Regular.ttf"
             if aspect_ratio == "9:16":
                 # Crop: from a landscape source, crop a portrait region centered horizontally.
                 crop_filter = "crop=ih*9/16:ih:(iw-ih*9/16)/2:0"
